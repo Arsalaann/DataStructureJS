@@ -21,9 +21,32 @@
 // }
 // console.log(sec_min,sec_max);
 
-//generate Random number then, find max and min using sort()
-let arr=new Array(10);
-for(var i=0;i<10;i++)
-    arr[i]=Math.floor(Math.random()*899+100);
-arr.sort((a,b)=>{return a-b});
-console.log(arr[1],arr[8]);
+const { DiffieHellmanGroup } = require('crypto');
+
+// //generate Random number then, find max and min using sort()
+// let arr=new Array(10);
+// for(var i=0;i<10;i++)
+//     arr[i]=Math.floor(Math.random()*899+100);
+// arr.sort((a,b)=>{return a-b});
+// console.log(arr[1],arr[8]);
+
+//prime factors of n
+let arr=new Array();
+function FindPrimeFactors(n){
+    for(var i=2;i<=n/2;i++){
+        for(var j=2;j<=i/2;j++){
+            if(i%j==0)
+                break;
+        }
+        if(j>i/2)
+            if(n%i==0){
+                arr[arr.length-1]=i;
+                console.log(i);
+            }
+    }
+}
+FindPrimeFactors(15);
+
+   
+
+
