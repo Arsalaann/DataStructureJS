@@ -1,9 +1,22 @@
 //generate Random number then, find max and min
 let arr=new Array(10);
-let min=1000,max=99;
+for(var i=0;i<10;i++)
+    arr[i]=Math.floor(Math.random()*899+100);
+let min=1000,max=99,sec_min=1001,sec_max=98;
 for(var i=0;i<10;i++){
-    arr[i]=Math.floor((Math.random()*1000)+99);
-    min=Math.min(min,arr[i]);
-    max=Math.max(max,arr[i]);
+    if(arr[i]>sec_max){
+        if(arr[i]>max){
+            sec_max=max;
+            max=arr[i];
+        }else
+            sec_max=arr[i];
+    }
+    if(arr[i]<sec_min){
+        if(arr[i]<min){
+            sec_min=min;
+            min=arr[i];
+        }else
+            sec_min=arr[i];
+    }
 }
-console.log(min,max);
+console.log(sec_min,sec_max);
