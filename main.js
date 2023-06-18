@@ -46,10 +46,27 @@
 // FindPrimeFactors(15);
 
 //Two length palindrome
-let arr=[];
-for(var i=11;i<99;i+=11)
-    arr[arr.length-1]=arr[i];
+// let arr=[];
+// for(var i=11;i<99;i+=11)
+//     arr[arr.length-1]=arr[i];
 
+let myMap=new Map();
+ for(var i=1;i<=6;i++)
+     myMap.set(i,0);
+while(true){
+    let x=Math.floor(Math.random()*6)+1;
+    myMap.set(x, (myMap.get(x))+1);
+    if(myMap.get(x)>9){
+        console.log(x);
+        break;
+    }
+}
+let mn=10000;
+myMap.forEach((key, val)=>{
+    if(val<mn)
+        mn=key;
+});
+console.log(mn);
 
 
    
