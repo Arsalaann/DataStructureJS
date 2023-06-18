@@ -21,8 +21,6 @@
 // }
 // console.log(sec_min,sec_max);
 
-const { DiffieHellmanGroup } = require('crypto');
-
 // //generate Random number then, find max and min using sort()
 // let arr=new Array(10);
 // for(var i=0;i<10;i++)
@@ -47,8 +45,12 @@ const { DiffieHellmanGroup } = require('crypto');
 // }
 // FindPrimeFactors(15);
 
-let x=0;
-console.log(1+2+3+x);
+//Two length palindrome
+let arr=[];
+for(var i=11;i<99;i+=11)
+    arr[arr.length-1]=arr[i];
+
+
 
    
 
